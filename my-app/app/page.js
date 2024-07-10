@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import factoryABI from "../artifacts/contracts/Factory.sol/FactoryContract.json";
+// import factoryABI from "../artifacts/contracts/Factory.sol/FactoryContract.json";
 
 export default function HomePage() {
   const [ethWallet, setEthWallet] = useState(undefined);
@@ -20,7 +20,7 @@ export default function HomePage() {
   const [date, setDate] = useState();
 
   const socialContractInstance = "0xb2F78A83B1E06949b21AE3972a3f67BEA69DCCa2";
-  const factory = factoryABI.abi;
+  const factory = process.env.Factoryabi;
 
   const getWallet = async () => {
     if (window.ethereum) {
@@ -56,6 +56,8 @@ export default function HomePage() {
   };
 
   const getsocialsContract = () => {
+    console.log(factory);
+    // console.log(factoryABI);
     // const provider = new ethers.providers.Web3Provider(ethWallet);
     const provider = new ethers.providers.Web3Provider(ethWallet);
     const signer = provider.getSigner();
@@ -112,6 +114,7 @@ export default function HomePage() {
   };
 
   const initUser = () => {
+    console.log(process.env);
     // Check to see if user has Metamask
     if (!ethWallet) {
       return <p>Please install Metamask in order to use this socials.</p>;
