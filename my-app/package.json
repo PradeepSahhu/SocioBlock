@@ -15,7 +15,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "hardhat": "^2.22.6",

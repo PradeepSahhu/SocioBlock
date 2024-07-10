@@ -19,7 +19,7 @@ export default function HomePage() {
   const [message, setMessage] = useState();
   const [date, setDate] = useState();
 
-  const socialContractInstance = "0x97346e8420A94fD5bd0f0DFa8cc015e9268384c1";
+  const socialContractInstance = "0xb2F78A83B1E06949b21AE3972a3f67BEA69DCCa2";
   const factory = factoryABI.abi;
 
   const getWallet = async () => {
